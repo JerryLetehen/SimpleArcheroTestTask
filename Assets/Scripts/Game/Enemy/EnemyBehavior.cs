@@ -30,7 +30,7 @@ namespace Game.Enemy
             var bullet = other.GetComponent<BulletBehavior>();
             if (bullet != null)
             {
-                Destroy(bullet.gameObject);
+                bullet.StopFlight();
                 health.Reduce();
             }
         }

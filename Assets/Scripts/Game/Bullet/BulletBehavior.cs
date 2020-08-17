@@ -7,7 +7,26 @@ namespace Game.Bullet
 {
     public class BulletBehavior : MonoBehaviour
     {
-        [SerializeField] private BulletBehaviorSettings settings;
+        [SerializeField] protected BulletBehaviorSettings settings;
+
+        private bool IsAbleToFlight
+        {
+            get
+            {
+                if (flightTokenSource?.IsCancellationRequested == false)
+                {
+                    if (target == null)
+                    {
+                        StopFlight();
+                        return false;
+                    }
+
+                    return true;
+                }
+
+                return false;
+            }
+        }
 
         private CancellationTokenSource flightTokenSource;
         private Transform target;
@@ -25,18 +44,29 @@ namespace Game.Bullet
             Flight();
         }
 
-        private async void Flight()
+        protected virtual async void Flight()
         {
-            while (flightTokenSource.IsCancellationRequested == false)
+            while (IsAbleToFlight)
             {
-                transform.Translate((target.position - transform.position).normalized * (settings.Speed * Time.deltaTime));
+                TranslateToTarget();
                 await Task.Yield();
             }
         }
 
+        private void TranslateToTarget()
+        {
+            transform.Translate((target.position - transform.position).normalized * (settings.Speed * Time.deltaTime));
+        }
+
         private void OnDestroy()
         {
+            StopFlight();
+        }
+
+        public void StopFlight()
+        {
             flightTokenSource?.Cancel();
+            Destroy(gameObject);
         }
     }
 }

@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36d27280701a4784bd86398af078a916, type: 3}
-  m_Name: PlayerGunSettings
+  m_Script: {fileID: 11500000, guid: 49a0cef3a68a46f08cebb754e97cd309, type: 3}
+  m_Name: GuidedMissileBulletBehaviorSettings
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6883896052656517074, guid: c4a09cfb4759747c6b9a6ac2cc112358,
-    type: 3}
-  reloadTime: 2
+  flightHeight: 5
