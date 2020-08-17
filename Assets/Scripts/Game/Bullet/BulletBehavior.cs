@@ -9,7 +9,7 @@ namespace Game.Bullet
     {
         [SerializeField] protected BulletBehaviorSettings settings;
 
-        private bool IsAbleToFlight
+        protected bool IsAbleToFlight
         {
             get
             {
