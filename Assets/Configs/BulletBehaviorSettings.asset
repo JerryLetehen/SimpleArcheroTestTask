@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45f190d589a449f9fbbdc8111682091, type: 3}
-  m_Name: EnemyMoverSettings
+  m_Script: {fileID: 11500000, guid: e3466e7352b14d8597981f93c11b1d36, type: 3}
+  m_Name: BulletBehaviorSettings
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 15

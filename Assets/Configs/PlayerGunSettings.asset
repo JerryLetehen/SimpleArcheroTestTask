@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45f190d589a449f9fbbdc8111682091, type: 3}
-  m_Name: EnemyMoverSettings
+  m_Script: {fileID: 11500000, guid: 36d27280701a4784bd86398af078a916, type: 3}
+  m_Name: PlayerGunSettings
   m_EditorClassIdentifier: 
-  speed: 5
+  bulletPrefab: {fileID: 1573911855172408004, guid: f1fd0c47068fe49ac9d06a4c4b38d929,
+    type: 3}
+  reloadTime: 2
