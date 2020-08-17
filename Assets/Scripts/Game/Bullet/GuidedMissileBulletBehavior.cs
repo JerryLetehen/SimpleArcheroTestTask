@@ -12,8 +12,11 @@ namespace Game.Bullet
         protected override async void Flight()
         {
             await LunchUp();
-            TurnPhysicsOff();
-            base.Flight();
+            if (IsAbleToFlight)
+            {
+                TurnPhysicsOff();
+                base.Flight();
+            }
         }
 
         private async Task LunchUp()
